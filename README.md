@@ -43,7 +43,7 @@ graph TD
 
     B --> B1
     B1 --> B2
-    B2 --> B3
+    B2 --> B3 & B4 & B5 & B6
     
     C --> C1
     C1 --> C2
