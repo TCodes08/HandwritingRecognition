@@ -41,19 +41,19 @@ graph TD
         E3[Final Result]
     end
 
-    B ==> B1
+    %%B --> B1
     B1 --> B2
     B2 --> B3 & B4 & B5 & B6
     
-    C ==> C1
-    C1 ==> C2
+    %%C --> C1
+    C1 --> C2
     C2 --> C3
     
-    D ==> D1
+    %%D --> D1
     D1 --> D2
     D2 --> D3
     
-    E ==> E1
+    %%E --> E1
     E1 --> E2
     E2 --> E3
 ```
