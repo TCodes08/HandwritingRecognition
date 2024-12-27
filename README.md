@@ -5,6 +5,58 @@ An Intelligent system for identifying the writer based on the handwriting patter
 ## Overview 🎯
 The system analyzes unique writing patterns and characteristics to determine the identity of the writer. Using advanced machine learning techniques, it can recognize individual writing styles and authenticate the author of handwritten text.
 
+## System Architecture 🏗️
+
+```mermaid
+graph TD
+    A[Input Image] --> B[Preprocessing]
+    B --> C[Feature Extraction]
+    C --> D[Pattern Analysis]
+    D --> E[Writer Identification]
+    
+    subgraph Preprocessing
+        B1[Image Normalization]
+        B2[Background Removal]
+        B3[Line Segmentation]
+        B4[Contour Detection]
+        B5[Character Bounding Boxes]
+        B6[Character Resizing]
+    end
+    
+    subgraph Feature Extraction
+        C1[Stroke Analysis]
+        C2[Style Features]
+        C3[Pattern Recognition]
+    end
+    
+    subgraph Pattern Analysis
+        D1[Compare Features]
+        D2[Calculate Similarity]
+        D3[Generate Score]
+    end
+    
+    subgraph Writer Identification
+        E1[Match Database]
+        E2[Confidence Score]
+        E3[Final Result]
+    end
+
+    B --> B1
+    B1 --> B2
+    B2 --> B3
+    
+    C --> C1
+    C1 --> C2
+    C2 --> C3
+    
+    D --> D1
+    D1 --> D2
+    D2 --> D3
+    
+    E --> E1
+    E1 --> E2
+    E2 --> E3
+```
 ## Features 🌟
 - Writer identification from handwritten samples
 - Pattern analysis of writing style
