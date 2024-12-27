@@ -9,53 +9,41 @@ The system analyzes unique writing patterns and characteristics to determine the
 
 ```mermaid
 graph TD
-    A[Input Image] ==> B[Preprocessing]
-    B ==> C[Feature Extraction]
-    C ==> D[Pattern Analysis]
-    D ==> E[Writer Identification]
+    %% Main flow
+    A[Input Image] --> B[Preprocessing]
+    B --> C[Feature Extraction]
+    C --> D[Pattern Analysis]
+    D --> E[Writer Identification]
     
     subgraph Preprocessing
-        B1[Image Normalization]
-        B2[Background Removal]
-        B3[Line Segmentation]
-        B4[Contour Detection]
-        B5[Character Bounding Boxes]
-        B6[Character Resizing]
+        B1[Image Normalization] --> B2[Background Removal]
+        B2 --> B3[Line Segmentation]
+        B2 --> B4[Contour Detection]
+        B2 --> B5[Character Bounding Boxes]
+        B2 --> B6[Character Resizing]
     end
     
     subgraph Feature Extraction
-        C1[Stroke Analysis]
-        C2[Style Features]
-        C3[Pattern Recognition]
+        C1[Stroke Analysis] --> C2[Style Features]
+        C2 --> C3[Pattern Recognition]
     end
     
     subgraph Pattern Analysis
-        D1[Compare Features]
-        D2[Calculate Similarity]
-        D3[Generate Score]
+        D1[Compare Features] --> D2[Calculate Similarity]
+        D2 --> D3[Generate Score]
     end
     
     subgraph Writer Identification
-        E1[Match Database]
-        E2[Confidence Score]
-        E3[Final Result]
+        E1[Match Database] --> E2[Confidence Score]
+        E2 --> E3[Final Result]
     end
 
-    B --> B1
-    B1 --> B2
-    B2 --> B3 & B4 & B5 & B6
-    
-    C --> C1
-    C1 --> C2
-    C2 --> C3
-    
-    D --> D1
-    D1 --> D2
-    D2 --> D3
-    
-    E --> E1
-    E1 --> E2
-    E2 --> E3
+    %% Style for dark theme
+    style A fill:#1a1a1a,stroke:#fff,stroke-width:2px,color:#fff
+    style B fill:#1a1a1a,stroke:#fff,stroke-width:2px,color:#fff
+    style C fill:#1a1a1a,stroke:#fff,stroke-width:2px,color:#fff
+    style D fill:#1a1a1a,stroke:#fff,stroke-width:2px,color:#fff
+    style E fill:#1a1a1a,stroke:#fff,stroke-width:2px,color:#fff
 ```
 ## Features 🌟
 - Writer identification from handwritten samples
